@@ -1,0 +1,240 @@
+:root{
+    /*Fonts*/
+    --font: 'Inter', sans-serif;
+
+    --white: #ffffff;
+    /*Dark Blue*/
+    --darkBlue300: #0a3871;
+
+    /*Light Blue*/
+    --lightBlue100: #f3f5fc; /*Background*/
+
+    /*Gray*/
+    --gray400: #495057;
+    --gray500: #343a40; 
+    --gray600: #d8dfe8;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: var(--lightBlue100);
+    font-family: var(--font);
+}
+
+.container{
+    transition: all 0.7s;
+}
+
+/*HEADER*/
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh; /*10% of screen (viewport height)*/
+}
+
+.logo{
+    width: 5rem;
+}
+
+/*FIRST SECTION*/
+
+.encrypt-text{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    margin: 0 1rem;
+}
+
+.text-in{
+    background: none; 
+    color: var(--darkBlue300);
+    font-size: 32px;
+    height: 60%;
+}
+
+.text-textarea{ /*TextArea Design*/
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.labels{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--gray400);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.warning-img{
+    margin-right: 5px;
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn{
+    padding: 24px;
+    font-size: 16px;
+    border-radius: 24px;
+    border: solid 1px var(--darkBlue300);
+    background: none;
+    color: var(--darkBlue300);
+    transition: all 0.5s;
+    width: 100%;
+    height: 67px;
+}
+
+.btn:first-child{
+    color: var(--white);
+    background-color: var(--darkBlue300);
+}
+
+.btn:hover{
+    background-color: var(--gray600);
+    color: var(--darkBlue300);
+    border-color: var(--darkBlue300);
+}
+
+.btn:first-child:hover{
+    color: var(--lightBlue100);
+    background-color: var(--darkBlue300);
+    border-color: var(--darkBlue300);
+}
+
+.btn:active{
+    color: var(--white);
+    background-color: var(--darkBlue300);
+}
+
+.btn:first-child:active{
+    color: var(--darkBlue300);
+    background-color: var(--lightBlue100);
+}
+
+/*SECOND SECTION*/
+.decrypt-text{
+    margin: 2rem;
+    padding: 2rem 1rem;
+    background-color: var(--white);
+    color: var(--gray500);
+    border-radius: 2rem;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.decrypt-text-placeholder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 2px;
+}
+
+.noMsj{
+    margin-bottom: 1rem;
+    font-size: 24px;
+    text-align: center;
+}
+
+.enMsj{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.btn-copy{
+    margin-bottom: 1rem;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hidde{ /*This class will help us in JS to hide elements*/
+    display: none;
+}
+
+
+/*Screen > 375px*/
+@media (min-width: 375px) {
+    .text-in{
+        margin-bottom: 8rem;
+        height: 70%;
+    }
+
+    .btn-container{
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        width: auto;
+    }
+
+    .decrypt-text-placeholder{
+        width: auto;
+    }
+} 
+
+/*Screen > 769px */
+@media (min-width: 769px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;  
+        height: 100vh;
+    }
+
+    .header{
+        grid-column: 1 / 3;
+        grid-row: 1;
+        margin: 2rem 2.5%;
+        padding: 10px;
+        height: 5vh;
+        width: 95%;
+    }
+
+    .logo{
+        width: 7.5rem;
+    }
+
+    /*FIRST SECTION*/
+    .encrypt-text{
+        padding: 10px;
+        grid-column: 1 / 3;
+        grid-row: 2;
+        height: 75vh;
+        margin-left: 20%;
+    }
+
+    .btn-container{
+        justify-content: center;
+    }
+
+     /*SECOND SECTION*/
+    .decrypt-text{
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        display: flex;        
+    }
+
+    .muneco{
+        display: block;
+    }
+}
+
